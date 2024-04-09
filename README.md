@@ -35,9 +35,11 @@ In the intital data preparion phase, I performed the following task:
 Some Interesting code I worked with 😃
 
 ``` Jupyter(Python)
+# To group the regions by profit, starting with the highest and ending with the lowest.
 region_with_the_most_profit = df.groupby('Region')[['Profit']].sum().sort_values(by = 'Profit', ascending = False).reset_index(drop = False )
 region_with_the_most_profit
 
+# To visulaize the region that made the most profit
 plt.figure(figsize=(20, 10))
 ax = sns.barplot(x='Region', y='Profit', data=region_with_the_most_profit, order=region_with_the_most_profit['Region'].value_counts().index)
 plt.title('Region With The Most Profit')
